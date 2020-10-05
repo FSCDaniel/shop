@@ -7,13 +7,13 @@ const vm = Vue.createApp({
           size: "BESAR",
           o: "12.50",
           f: "60.00",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "SERDAHANA",
           o: "12.00",
           f: "57.50",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         }
       ],
       chicken: [
@@ -21,37 +21,37 @@ const vm = Vue.createApp({
           size: "AA",
           o: "12.50",
           f: "60.00",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "BB",
           o: "12.00",
           f: "57.50",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "CC",
           o: "12.50",
           f: "60.00",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "DD",
           o: "12.00",
           f: "57.50",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "EE",
           o: "12.50",
           f: "60.00",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         },
         {
           size: "FF",
           o: "12.00",
           f: "57.50",
-          pic: "images/egg/egg.png",
+          pic: "egg.png",
         }
       ],
       bonzai: [
