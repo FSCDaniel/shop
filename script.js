@@ -1,7 +1,7 @@
 const vm = Vue.createApp({
   data() {
     return {
-      viewItem: "egg",
+      viewItem: "garden",
       kampung: [
         {
           size: "BESAR",
@@ -54,18 +54,18 @@ const vm = Vue.createApp({
           pic: "egg.png",
         }
       ],
-      bonzai: [
+      bonsai: [
         {
-          name: "Bonzai A",
+          name: "bonsai A",
           year: "10",
           price: "8000.00",
-          pic: "images/garden/bonzai.png",
+          pic: "../bonsai.png",
         },
         {
-          name: "Bonzai B",
+          name: "bonsai B",
           year: "20",
           price: "20000.00",
-          pic: "images/garden/bonzai.png",
+          pic: "../bonsai.png",
         }
       ],
       soil: [
@@ -73,13 +73,13 @@ const vm = Vue.createApp({
           name: "Soil",
           weight: "1",
           price: "100.00",
-          pic: "images/garden/bonzai.png",
+          pic: "../bonsai.png",
         },
         {
           name: "Fertilizer",
           weight: "1",
           price: "100.00",
-          pic: "images/garden/bonzai.png",
+          pic: "../bonsai.png",
         }
       ]
     }
