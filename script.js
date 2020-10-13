@@ -126,11 +126,9 @@ const vm = Vue.createApp({
   },
   methods: {
     changeToEgg: function () {
-      console.log("Egg")
       this.viewItem = "egg";
     },
     changeToGarden: function () {
-      console.log("Garden")
       this.viewItem = "garden";
     },
     changeToEN: function () {

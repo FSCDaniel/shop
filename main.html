@@ -15,6 +15,18 @@
 <body>
 
   <div id="vue-app">
+    <div id="wrapper-section">
+      <button v-if="languagePref == 'en'" v-on:click="changeToEgg()">Egg</button>
+      <button v-if="languagePref == 'en'" v-on:click="changeToGarden()">Garden</button>
+
+      <button v-if="languagePref == 'bm'" v-on:click="changeToEgg()">Telur</button>
+      <button v-if="languagePref == 'bm'" v-on:click="changeToGarden()">Garden</button>
+
+      <button v-if="languagePref == 'cn'" v-on:click="changeToEgg()">Dan</button>
+      <button v-if="languagePref == 'cn'" v-on:click="changeToGarden()">Garden</button>
+
+    </div>
+
     <div id="wrapper-lg">
       <button id="lg-btn=en" v-on:click="changeToEN()">English</button>
       <button id="lg-btn-bm" v-on:click="changeToBM()">Bahasa</button>
@@ -22,10 +34,14 @@
     </div>
 
     <div id="wrapper-egg">
-      <div id="cont-title">EGG</div>
+      <div id="cont-title">
+        <h1 v-if="languagePref == 'en'" class="lg-en">AMAZING EGG</h1>
+        <h1 v-if="languagePref == 'bm'" class="lg-bm">TELUR LUAR BIASA</h1>
+        <h1 v-if="languagePref == 'cn'" class="lg-cn">Dan</h1>
+      </div>
 
       <div id="wrapper-kampung" class="sub-wrapper">
-        <div class="cont-sub-title sub-title">
+        <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Kampung Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Kampung</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
@@ -41,20 +57,20 @@
 
           <div v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
-            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
-            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+            <p class="lg-bm">RM: {{ a.price1 }} 1 dulang</p>
+            <p class="lg-bm">RM: {{ a.price5 }} 5 dulang</p>
           </div>
 
           <div v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
-            <p class="lg-cn">RM: {{ a.price1 }}</p>
-            <p class="lg-cn">RM: {{ a.price5 }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }} 1 盤</p>
+            <p class="lg-cn">RM: {{ a.price5 }} 5 盤</p>
           </div>
         </div>
       </div>
 
       <div id="wrapper-economic" class="sub-wrapper">
-        <div class="cont-sub-title sub-title">
+        <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Economic Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ekonomi</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
@@ -65,25 +81,25 @@
           <div v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.sizeEN }}</p>
             <p class="lg-en">RM: {{ a.price1 }} 1 tray</p>
-            <p class="lg-en">RM: {{ a.price5 }} 5 trays</p>
+            <!-- <p class="lg-en">RM: {{ a.price5 }} 5 trays</p> -->
           </div>
 
           <div v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
-            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
-            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+            <p class="lg-bm">RM: {{ a.price1 }} 1 dulang</p>
+            <!-- <p class="lg-bm">RM: {{ a.price5 }} 5 dulang</p> -->
           </div>
 
           <div v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
-            <p class="lg-cn">RM: {{ a.price1 }}</p>
-            <p class="lg-cn">RM: {{ a.price5 }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }} 1 盤</p>
+            <!-- <p class="lg-cn">RM: {{ a.price5 }} 5 盤</p> -->
           </div>
         </div>
       </div>
 
       <div id="wrapper-chicken" class="sub-wrapper">
-        <div class="cont-sub-title sub-title">
+        <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Chicken Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ayam</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Chicken</h2>
@@ -99,14 +115,14 @@
 
           <div v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
-            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
-            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+            <p class="lg-bm">RM: {{ a.price1 }} 1 dulang</p>
+            <p class="lg-bm">RM: {{ a.price5 }} 5 dulang</p>
           </div>
 
           <div v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
-            <p class="lg-cn">RM: {{ a.price1 }}</p>
-            <p class="lg-cn">RM: {{ a.price5 }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }} 1 盤</p>
+            <p class="lg-cn">RM: {{ a.price5 }} 5 盤</p>
           </div>
         </div>
       </div>
