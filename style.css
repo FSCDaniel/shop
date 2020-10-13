@@ -1,12 +1,13 @@
 @media only screen and (max-width: 768px) {
 }
-/* body {
+body {
   background-color: #fff8ef;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
 }
-#vue-app {
-  width: 90%;
+#wrapper-egg,
+#wrapper-garden {
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-} */
+}
