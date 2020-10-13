@@ -47,21 +47,21 @@
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
         </div>
         <div v-for="a in egg.kampung">
-          <img v-bind:src="a.images" alt="...">
+          <img class="center" v-bind:src="a.images" alt="...">
 
-          <div v-if="languagePref == 'en'">
+          <div class="info" v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.sizeEN }}</p>
             <p class="lg-en">1 tray RM: {{ a.price1 }}</p>
             <p class="lg-en">5 trays RM: {{ a.price5 }}</p>
           </div>
 
-          <div v-if="languagePref == 'bm'">
+          <div class="info" v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
             <p class="lg-bm">1 dulang RM: {{ a.price1 }}</p>
             <p class="lg-bm">5 dulang RM: {{ a.price5 }}</p>
           </div>
 
-          <div v-if="languagePref == 'cn'">
+          <div class="info" v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
             <p class="lg-cn">1 盤 RM: {{ a.price1 }}</p>
             <p class="lg-cn">5 盤 RM: {{ a.price5 }}</p>
@@ -76,21 +76,21 @@
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
         </div>
         <div v-for="a in egg.economic">
-          <img v-bind:src="a.images" alt="...">
+          <img class="center" v-bind:src="a.images" alt="...">
 
-          <div v-if="languagePref == 'en'">
+          <div class="info" v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.sizeEN }}</p>
             <p class="lg-en">1 tray RM: {{ a.price1 }}</p>
             <!-- <p class="lg-en">5 trays RM: {{ a.price5 }}</p> -->
           </div>
 
-          <div v-if="languagePref == 'bm'">
+          <div class="info" v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
             <p class="lg-bm">1 dulang RM: {{ a.price1 }}</p>
             <!-- <p class="lg-bm">5 dulang RM: {{ a.price5 }}</p> -->
           </div>
 
-          <div v-if="languagePref == 'cn'">
+          <div class="info" v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
             <p class="lg-cn">1 盤 RM: {{ a.price1 }}</p>
             <!-- <p class="lg-cn">5 盤 RM: {{ a.price5 }}</p> -->
@@ -105,7 +105,7 @@
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Chicken</h2>
         </div>
         <div v-for="a in egg.chicken">
-          <img v-bind:src="a.images" alt="...">
+          <img class="center" v-bind:src="a.images" alt="...">
 
           <div v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.sizeEN }}</p>
