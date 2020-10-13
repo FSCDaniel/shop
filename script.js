@@ -1,7 +1,7 @@
 const vm = Vue.createApp({
   data() {
     return {
-      viewItem: "garden",
+      viewItem: "egg",
       languagePref: "en",
       egg: {
         kampung: [
