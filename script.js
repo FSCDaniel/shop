@@ -7,13 +7,19 @@ const vm = Vue.createApp({
           size: "BESAR",
           o: "12.50",
           f: "60.00",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "SERDAHANA",
           o: "12.00",
           f: "57.50",
-          pic: "egg.png",
+          pic: "./images/egg.png",
+        }
+      ],
+      economic: [
+        {
+          o: "7.00",
+          pic: "./images/egg.png",
         }
       ],
       chicken: [
@@ -21,37 +27,37 @@ const vm = Vue.createApp({
           size: "AA",
           o: "12.50",
           f: "60.00",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "BB",
           o: "12.00",
           f: "57.50",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "CC",
           o: "12.50",
           f: "60.00",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "DD",
           o: "12.00",
           f: "57.50",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "EE",
           o: "12.50",
           f: "60.00",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         },
         {
           size: "FF",
           o: "12.00",
           f: "57.50",
-          pic: "egg.png",
+          pic: "./images/egg.png",
         }
       ],
       bonsai: [
@@ -59,13 +65,13 @@ const vm = Vue.createApp({
           name: "bonsai A",
           year: "10",
           price: "8000.00",
-          pic: "../bonsai.png",
+          pic: "./images/bonsai.png",
         },
         {
           name: "bonsai B",
           year: "20",
           price: "20000.00",
-          pic: "../bonsai.png",
+          pic: "./images/bonsai.png",
         }
       ],
       soil: [
@@ -73,13 +79,13 @@ const vm = Vue.createApp({
           name: "Soil",
           weight: "1",
           price: "100.00",
-          pic: "../bonsai.png",
+          pic: "./images/bonsai.png",
         },
         {
           name: "Fertilizer",
           weight: "1",
           price: "100.00",
-          pic: "../bonsai.png",
+          pic: "./images/bonsai.png",
         }
       ]
     }

@@ -24,19 +24,16 @@
   <div id="vue-app">
     <div id="container-nav" class="shadow-lg p-3 mb-5 bg-white rounded">
       <nav class="nav justify-content-center fixed-top">
-        <!-- <div id="nav-egg" v-on:click="changeToEgg()">
+        <div id="nav-egg" v-on:click="changeToEgg()">
           <a class="nav-link center" href="#">EGG</a>
-        </div> -->
-        <div id="nav-garden" v-on:click="changeToGarden">
+        </div>
+        <div id="nav-garden" v-on:click="changeToGarden()">
           <a class="nav-link center" href="#">GARDEN</a>
         </div>
       </nav>
     </div>
 
     <div id="info-top">
-      <!-- <div class="deliver center">
-        <p>Penghantaran Percuma / Free Delivery</p>
-      </div> -->
       <hr>
       <div class="contact center">
         <p>Sila hubungi / Whatsapp Daniel</p>
@@ -68,6 +65,28 @@
                   </p>
                   <p class="card-text">
                     5 Tray: RM {{ kpg.f }}
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col" class="table-title center">ECONOMIC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="eco in economic">
+            <td>
+              <div class="card">
+                <img v-bind:src="eco.pic" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">
+                    1 Tray: RM {{ kpg.o }}
                   </p>
                 </div>
               </div>
@@ -160,9 +179,6 @@
     </div>
 
     <div id="info-bottom">
-      <!-- <div class="deliver center">
-        <p>Penghantaran Percuma / Free Delivery</p>
-      </div> -->
       <hr>
       <div class="contact center">
         <p>Sila hubungi / Whatsapp Daniel</p>
