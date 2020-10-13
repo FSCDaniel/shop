@@ -107,20 +107,24 @@ const vm = Vue.createApp({
             images: "./images/bonsai.PNG"
           }
         ],
-        soil: {
-          nameEN: "Compose Soil",
-          nameBN: "Tanah",
-          nameCN: "",
-          price: "25.00",
-          images: "./images/bonsai.PNG"
-        },
-        fertiliser: {
-          nameEN: "Fertiliser",
-          nameBN: "Tanah",
-          nameCN: "",
-          price: "25.00",
-          images: "./images/bonsai.PNG"
-        }
+        soil: [
+          {
+            nameEN: "Compose Soil",
+            nameBN: "Tanah",
+            nameCN: "",
+            price: "25.00",
+            images: "./images/bonsai.PNG"
+          }
+        ],
+        fertiliser: [
+          {
+            nameEN: "Fertiliser",
+            nameBN: "Tanah",
+            nameCN: "",
+            price: "25.00",
+            images: "./images/bonsai.PNG"
+          }
+        ]
       }
     }
   },
