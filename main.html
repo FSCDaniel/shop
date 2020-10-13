@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -17,177 +13,107 @@
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
   <div id="vue-app">
-    <div id="container-nav" class="shadow-lg p-3 mb-5 bg-white rounded">
-      <nav class="nav justify-content-center fixed-top">
-        <div id="nav-egg" v-on:click="changeToEgg()">
-          <a class="nav-link center" href="#">EGG</a>
+    <div id="wrapper-lg">
+      <button id="lg-btn=en" v-on:click="changeToEN()">English</button>
+      <button id="lg-btn-bm" v-on:click="changeToBM()">Bahasa</button>
+      <button id="lg-btn-cn" v-on:click="changeToCN()">HuaYu</button>
+    </div>
+
+    <div id="wrapper-egg">
+      <div id="cont-title">EGG</div>
+
+      <div id="wrapper-kampung" class="sub-wrapper">
+        <div class="cont-sub-title sub-title">
+          <h2 v-if="languagePref == 'en'" class="lg-en">Kampung Egg</h2>
+          <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Kampung</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
         </div>
-        <div id="nav-garden" v-on:click="changeToGarden()">
-          <a class="nav-link center" href="#">GARDEN</a>
+        <div v-for="a in egg.kampung">
+          <img v-bind:src="a.images" alt="...">
+
+          <div v-if="languagePref == 'en'">
+            <p class="lg-en">{{ a.sizeEN }}</p>
+            <p class="lg-en">RM: {{ a.price1 }} 1 tray</p>
+            <p class="lg-en">RM: {{ a.price5 }} 5 trays</p>
+          </div>
+
+          <div v-if="languagePref == 'bm'">
+            <p class="lg-bm">{{ a.sizeBM }}</p>
+            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
+            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+          </div>
+
+          <div v-if="languagePref == 'cn'">
+            <p class="lg-cn">{{ a.sizeCN }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }}</p>
+            <p class="lg-cn">RM: {{ a.price5 }}</p>
+          </div>
         </div>
-      </nav>
-    </div>
-
-    <div id="info-top">
-      <hr>
-      <div class="contact center">
-        <p>Sila hubungi / Whatsapp Daniel</p>
-        <p class="num">011-1696 2828</p>
       </div>
-      <div class="warning">
-        NOT DONE YET, ALL PICTURE AND WORDS ARE PLACEHOLDERS
+
+      <div id="wrapper-economic" class="sub-wrapper">
+        <div class="cont-sub-title sub-title">
+          <h2 v-if="languagePref == 'en'" class="lg-en">Economic Egg</h2>
+          <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ekonomi</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
+        </div>
+        <div v-for="a in egg.economic">
+          <img v-bind:src="a.images" alt="...">
+
+          <div v-if="languagePref == 'en'">
+            <p class="lg-en">{{ a.sizeEN }}</p>
+            <p class="lg-en">RM: {{ a.price1 }} 1 tray</p>
+            <p class="lg-en">RM: {{ a.price5 }} 5 trays</p>
+          </div>
+
+          <div v-if="languagePref == 'bm'">
+            <p class="lg-bm">{{ a.sizeBM }}</p>
+            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
+            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+          </div>
+
+          <div v-if="languagePref == 'cn'">
+            <p class="lg-cn">{{ a.sizeCN }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }}</p>
+            <p class="lg-cn">RM: {{ a.price5 }}</p>
+          </div>
+        </div>
       </div>
-    </div>
 
+      <div id="wrapper-chicken" class="sub-wrapper">
+        <div class="cont-sub-title sub-title">
+          <h2 v-if="languagePref == 'en'" class="lg-en">Chicken Egg</h2>
+          <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ayam</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">Chicken</h2>
+        </div>
+        <div v-for="a in egg.chicken">
+          <img v-bind:src="a.images" alt="...">
 
-    <!-- EGG -->
-    <div id="wrapper-egg" v-if="viewItem == 'egg'">
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" class="table-title center">KAMPUNG</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="kpg in kampung" :key="kpg.size">
-            <td>
-              <div class="card">
-                <img v-bind:src="kpg.pic" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Saiz: {{ kpg.size }}</h5>
-                  <p class="card-text">
-                    1 Tray: RM {{ kpg.o }}
-                  </p>
-                  <p class="card-text">
-                    5 Tray: RM {{ kpg.f }}
-                  </p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <div v-if="languagePref == 'en'">
+            <p class="lg-en">{{ a.sizeEN }}</p>
+            <p class="lg-en">RM: {{ a.price1 }} 1 tray</p>
+            <p class="lg-en">RM: {{ a.price5 }} 5 trays</p>
+          </div>
 
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" class="table-title center">ECONOMIC</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="eco in economic">
-            <td>
-              <div class="card">
-                <img v-bind:src="eco.pic" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">
-                    1 Tray: RM {{ kpg.o }}
-                  </p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <div v-if="languagePref == 'bm'">
+            <p class="lg-bm">{{ a.sizeBM }}</p>
+            <p class="lg-bm">RM: {{ a.price1 }} satu</p>
+            <p class="lg-bm">RM: {{ a.price5 }} lima</p>
+          </div>
 
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" class="table-title center">NORMAL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="chk in chicken" :key="chk.size">
-            <td>
-              <div class="card">
-                <img v-bind:src="chk.pic" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Saiz: {{ chk.size }}</h5>
-                  <p class="card-text">
-                    1 Tray: RM {{ chk.o }}
-                  </p>
-                  <p class="card-text">
-                    5 Tray: RM {{ chk.f }}
-                  </p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- GARDEN -->
-    <div id="wrapper-garden" v-if="viewItem == 'garden'">
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" class="table-title center">BONZAI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="bzi in bonzai" :key="bzi.name">
-            <td>
-              <div class="card">
-                <img v-bind:src="bzi.pic" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ bzi.name }}</h5>
-                  <p class="card-text">
-                    {{ bzi.year }} year(s) old
-                  </p>
-                  <p class="card-text">
-                    Price: RM {{ bzi.price }}
-                  </p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col" class="table-title center">SOIL & FERTILIZER</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="sl in soil" :key="sl.name">
-            <td>
-              <div class="card">
-                <img v-bind:src="sl.pic" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ sl.name }}</h5>
-                  <p class="card-text">
-                    {{ sl.weight }} KG
-                  </p>
-                  <p class="card-text">
-                    Price: RM {{ sl.price }}
-                  </p>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div id="info-bottom">
-      <hr>
-      <div class="contact center">
-        <p>Sila hubungi / Whatsapp Daniel</p>
-        <p class="num">011-1696 2828</p>
+          <div v-if="languagePref == 'cn'">
+            <p class="lg-cn">{{ a.sizeCN }}</p>
+            <p class="lg-cn">RM: {{ a.price1 }}</p>
+            <p class="lg-cn">RM: {{ a.price5 }}</p>
+          </div>
+        </div>
       </div>
+
     </div>
 
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

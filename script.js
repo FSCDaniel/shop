@@ -2,92 +2,126 @@ const vm = Vue.createApp({
   data() {
     return {
       viewItem: "garden",
-      kampung: [
-        {
-          size: "BESAR",
-          o: "12.50",
-          f: "60.00",
-          pic: "./images/egg.png",
+      languagePref: "en",
+      egg: {
+        kampung: [
+          {
+            sizeEN: "Large",
+            sizeBM: "Besar",
+            sizeCN: "大",
+            price1: "12.50",
+            price5: "60.00",
+            images: "./images/egg.PNG"
+          },
+          {
+            sizeEN: "Medium",
+            sizeBM: "Serdahana",
+            sizeCN: "中",
+            price1: "11.50",
+            price5: "55.00",
+            images: "./images/egg.PNG"
+          }
+        ],
+        economic: [
+          {
+            sizeEN: "Not consistent",
+            sizeBM: "Tidak konsisten",
+            sizeCN: "不一致",
+            price1: "7.00",
+            price5: "35.00",
+            images: "./images/egg.png"
+          }
+        ],
+        chicken: [
+          {
+            sizeEN: "AA",
+            sizeBM: "AA",
+            sizeCN: "AA",
+            price1: "12.50",
+            price5: "60.00",
+            images: "./images/egg.png"
+          },
+          {
+            sizeEN: "A",
+            sizeBM: "A",
+            sizeCN: "A",
+            price1: "11.50",
+            price5: "55.00",
+            images: "./images/egg.png"
+          },
+          {
+            sizeEN: "B",
+            sizeBM: "B",
+            sizeCN: "B",
+            price1: "12.50",
+            price5: "60.00",
+            images: "./images/egg.png"
+          },
+          {
+            sizeEN: "C",
+            sizeBM: "C",
+            sizeCN: "C",
+            price1: "11.50",
+            price5: "55.00",
+            images: "./images/egg.png"
+          },
+          {
+            sizeEN: "D",
+            sizeBM: "D",
+            sizeCN: "D",
+            price1: "12.50",
+            price5: "60.00",
+            images: "./images/egg.png"
+          },
+          {
+            sizeEN: "E",
+            sizeBM: "E",
+            sizeCN: "E",
+            price1: "11.50",
+            price5: "55.00",
+            images: "./images/egg.png"
+          }
+        ]
+      },
+      garden: {
+        bonsai: [
+          {
+            nameEN: "Bonsai 1",
+            nameBN: "Tanah",
+            nameCN: "",
+            price: "2500.00",
+            images: "./images/bonsai.png"
+          },
+          {
+            nameEN: "Bonsai 2",
+            nameBN: "Tanah",
+            nameCN: "",
+            price: "4500.00",
+            images: "./images/bonsai.png"
+          },
+          {
+            nameEN: "Bonsai 3",
+            nameBN: "Tanah",
+            nameCN: "",
+            price: "6500.00",
+            images: "./images/bonsai.png"
+          }
+        ],
+        soil: {
+          nameEN: "Compose Soil",
+          nameBN: "Tanah",
+          nameCN: "",
+          price: "25.00",
+          images: "./images/bonsai.png"
         },
-        {
-          size: "SERDAHANA",
-          o: "12.00",
-          f: "57.50",
-          pic: "./images/egg.png",
+        fertiliser: {
+          nameEN: "Fertiliser",
+          nameBN: "Tanah",
+          nameCN: "",
+          price: "25.00",
+          images: "./images/bonsai.png"
         }
-      ],
-      economic: [
-        {
-          o: "7.00",
-          pic: "./images/egg.png",
-        }
-      ],
-      chicken: [
-        {
-          size: "AA",
-          o: "12.50",
-          f: "60.00",
-          pic: "./images/egg.png",
-        },
-        {
-          size: "BB",
-          o: "12.00",
-          f: "57.50",
-          pic: "./images/egg.png",
-        },
-        {
-          size: "CC",
-          o: "12.50",
-          f: "60.00",
-          pic: "./images/egg.png",
-        },
-        {
-          size: "DD",
-          o: "12.00",
-          f: "57.50",
-          pic: "./images/egg.png",
-        },
-        {
-          size: "EE",
-          o: "12.50",
-          f: "60.00",
-          pic: "./images/egg.png",
-        },
-        {
-          size: "FF",
-          o: "12.00",
-          f: "57.50",
-          pic: "./images/egg.png",
-        }
-      ],
-      bonsai: [
-        {
-          name: "bonsai A",
-          year: "10",
-          price: "8000.00",
-          pic: "./images/bonsai.png",
-        },
-        {
-          name: "bonsai B",
-          year: "20",
-          price: "20000.00",
-          pic: "./images/bonsai.png",
-        }
-      ],
-      soil: [
-        {
-          name: "Soil",
-          weight: "1",
-          price: "100.00",
-          pic: "./images/bonsai.png",
-        },
-        {
-          name: "Fertilizer",
-          weight: "1",
-          price: "100.00",
-          pic: "./images/bonsai.png",
-        }
-      ]
+      }
     }
   },
   methods: {
@@ -98,6 +132,15 @@ const vm = Vue.createApp({
     changeToGarden: function () {
       console.log("Garden")
       this.viewItem = "garden";
-    }
+    },
+    changeToEN: function () {
+      this.languagePref = "en";
+    },
+    changeToBM: function () {
+      this.languagePref = "bm";
+    },
+    changeToCN: function () {
+      this.languagePref = "cn";
+    },
   }
 }).mount('#vue-app')
