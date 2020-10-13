@@ -46,7 +46,7 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Kampung</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
         </div>
-        <div v-for="a in egg.kampung">
+        <div class="content-box" v-for="a in egg.kampung">
           <img class="center" v-bind:src="a.images" alt="...">
 
           <div class="info" v-if="languagePref == 'en'">
@@ -75,7 +75,7 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ekonomi</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
         </div>
-        <div v-for="a in egg.economic">
+        <div class="content-box" v-for="a in egg.economic">
           <img class="center" v-bind:src="a.images" alt="...">
 
           <div class="info" v-if="languagePref == 'en'">
@@ -104,22 +104,22 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ayam</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Chicken</h2>
         </div>
-        <div v-for="a in egg.chicken">
+        <div class="content-box" v-for="a in egg.chicken">
           <img class="center" v-bind:src="a.images" alt="...">
 
-          <div v-if="languagePref == 'en'">
+          <div class="info" v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.sizeEN }}</p>
             <p class="lg-en">1 tray: RM {{ a.price1 }}</p>
             <p class="lg-en">5 trays: RM {{ a.price5 }}</p>
           </div>
 
-          <div v-if="languagePref == 'bm'">
+          <div class="info" v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.sizeBM }}</p>
             <p class="lg-bm">1 dulang: RM {{ a.price1 }}</p>
             <p class="lg-bm">5 dulang: RM {{ a.price5 }}</p>
           </div>
 
-          <div v-if="languagePref == 'cn'">
+          <div class="info" v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.sizeCN }}</p>
             <p class="lg-cn">1 盤: RM {{ a.price1 }}</p>
             <p class="lg-cn">5 盤: RM {{ a.price5 }}</p>
@@ -129,7 +129,7 @@
 
     </div>
 
-    <div id="wrapper-bonsai" v-if="viewItem == 'garden'">
+    <div id="wrapper-garden" v-if="viewItem == 'garden'">
       <div id="cont-title">
         <h1 v-if="languagePref == 'en'" class="lg-en">AMAZING GARDEN</h1>
         <h1 v-if="languagePref == 'bm'" class="lg-bm">KEBUN LUAR BIASA</h1>
@@ -142,7 +142,7 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Bonsai</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Bonsai</h2>
         </div>
-        <div v-for="a in garden.bonsai">
+        <div class="content-box" v-for="a in garden.bonsai">
           <img class="center" v-bind:src="a.images" alt="...">
 
           <div class="info" v-if="languagePref == 'en'">
@@ -168,7 +168,7 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Tanah</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Tu</h2>
         </div>
-        <div v-for="a in garden.soil">
+        <div class="content-box" v-for="a in garden.soil">
           <img class="center" v-bind:src="a.images" alt="...">
       
           <div class="info" v-if="languagePref == 'en'">
@@ -194,7 +194,7 @@
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Baja</h2>
           <h2 v-if="languagePref == 'cn'" class="lg-cn">Fei Liao</h2>
         </div>
-        <div v-for="a in garden.fertiliser">
+        <div class="content-box" v-for="a in garden.fertiliser">
           <img class="center" v-bind:src="a.images" alt="...">
       
           <div class="info" v-if="languagePref == 'en'">
