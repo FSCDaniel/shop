@@ -16,53 +16,59 @@
 
   <div id="vue-app">
     <div id="wrapper-section">
-      <button v-if="languagePref == 'en'" v-on:click="changeToEgg()">Egg</button>
-      <button v-if="languagePref == 'en'" v-on:click="changeToGarden()">Garden</button>
+      <button class="btn-sec" v-if="languagePref == 'en'" v-on:click="changeToEgg()">Egg</button>
+      <button class="btn-sec" v-if="languagePref == 'en'" v-on:click="changeToGarden()">Garden</button>
 
-      <button v-if="languagePref == 'bm'" v-on:click="changeToEgg()">Telur</button>
-      <button v-if="languagePref == 'bm'" v-on:click="changeToGarden()">Garden</button>
+      <button class="btn-sec" v-if="languagePref == 'bm'" v-on:click="changeToEgg()">Telur</button>
+      <button class="btn-sec" v-if="languagePref == 'bm'" v-on:click="changeToGarden()">Kebun</button>
 
-      <button v-if="languagePref == 'cn'" v-on:click="changeToEgg()">Dan</button>
-      <button v-if="languagePref == 'cn'" v-on:click="changeToGarden()">Garden</button>
+      <button class="btn-sec" v-if="languagePref == 'cn'" v-on:click="changeToEgg()">蛋</button>
+      <button class="btn-sec" v-if="languagePref == 'cn'" v-on:click="changeToGarden()">花园</button>
 
     </div>
 
     <div id="wrapper-lg">
-      <button id="lg-btn=en" v-on:click="changeToEN()">English</button>
-      <button id="lg-btn-bm" v-on:click="changeToBM()">Bahasa</button>
-      <button id="lg-btn-cn" v-on:click="changeToCN()">HuaYu</button>
+      <button id="lg-btn-en" class="btn-lg" v-on:click="changeToEN()">English</button>
+      <button id="lg-btn-bm" class="btn-lg" v-on:click="changeToBM()">Bahasa</button>
+      <button id="lg-btn-cn" class="btn-lg" v-on:click="changeToCN()">中文</button>
+    </div>
+
+    <div id="wrapper-contact">
+      <div v-if="languagePref == 'en'" class="lg-en">Please Whatsapp/Call Daniel at 011-16962828</div>
+      <div v-if="languagePref == 'bm'" class="lg-bm">Sila Whatsapp/Call Daniel di 011-16962828</div>
+      <div v-if="languagePref == 'cn'" class="lg-cn">请 Whatsapp/呼叫 Daniel 在 011-16962828</div>
     </div>
 
     <div id="wrapper-egg" v-if="viewItem == 'egg'">
       <div id="cont-title">
         <h1 v-if="languagePref == 'en'" class="lg-en">AMAZING EGG</h1>
         <h1 v-if="languagePref == 'bm'" class="lg-bm">TELUR LUAR BIASA</h1>
-        <h1 v-if="languagePref == 'cn'" class="lg-cn">Dan</h1>
+        <h1 v-if="languagePref == 'cn'" class="lg-cn">神奇蛋</h1>
       </div>
-
+      <div class="thick-line"></div>
       <div id="wrapper-kampung" class="sub-wrapper">
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Kampung Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Kampung</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">村蛋</h2>
         </div>
         <div class="content-box" v-for="a in egg.kampung">
           <img class="center" v-bind:src="a.images" alt="...">
 
           <div class="info" v-if="languagePref == 'en'">
-            <p class="lg-en">{{ a.sizeEN }}</p>
+            <p class="lg-en">Size: {{ a.sizeEN }}</p>
             <p class="lg-en">1 tray: RM {{ a.price1 }}</p>
             <p class="lg-en">5 trays: RM {{ a.price5 }}</p>
           </div>
 
           <div class="info" v-if="languagePref == 'bm'">
-            <p class="lg-bm">{{ a.sizeBM }}</p>
+            <p class="lg-bm">Saiz: {{ a.sizeBM }}</p>
             <p class="lg-bm">1 dulang: RM {{ a.price1 }}</p>
             <p class="lg-bm">5 dulang: RM {{ a.price5 }}</p>
           </div>
 
           <div class="info" v-if="languagePref == 'cn'">
-            <p class="lg-cn">{{ a.sizeCN }}</p>
+            <p class="lg-cn">尺寸: {{ a.sizeCN }}</p>
             <p class="lg-cn">1 盤: RM {{ a.price1 }}</p>
             <p class="lg-cn">5 盤: RM {{ a.price5 }}</p>
           </div>
@@ -73,7 +79,7 @@
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Economic Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ekonomi</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Kampung</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">经济蛋</h2>
         </div>
         <div class="content-box" v-for="a in egg.economic">
           <img class="center" v-bind:src="a.images" alt="...">
@@ -102,25 +108,25 @@
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Chicken Egg</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Telur Ayam</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Chicken</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">鸡蛋</h2>
         </div>
         <div class="content-box" v-for="a in egg.chicken">
           <img class="center" v-bind:src="a.images" alt="...">
 
           <div class="info" v-if="languagePref == 'en'">
-            <p class="lg-en">{{ a.sizeEN }}</p>
+            <p class="lg-en">Size: {{ a.sizeEN }}</p>
             <p class="lg-en">1 tray: RM {{ a.price1 }}</p>
             <p class="lg-en">5 trays: RM {{ a.price5 }}</p>
           </div>
 
           <div class="info" v-if="languagePref == 'bm'">
-            <p class="lg-bm">{{ a.sizeBM }}</p>
+            <p class="lg-bm">Saiz: {{ a.sizeBM }}</p>
             <p class="lg-bm">1 dulang: RM {{ a.price1 }}</p>
             <p class="lg-bm">5 dulang: RM {{ a.price5 }}</p>
           </div>
 
           <div class="info" v-if="languagePref == 'cn'">
-            <p class="lg-cn">{{ a.sizeCN }}</p>
+            <p class="lg-cn">尺寸: {{ a.sizeCN }}</p>
             <p class="lg-cn">1 盤: RM {{ a.price1 }}</p>
             <p class="lg-cn">5 盤: RM {{ a.price5 }}</p>
           </div>
@@ -129,18 +135,19 @@
 
     </div>
 
+    <!-- ============================================================= -->
     <div id="wrapper-garden" v-if="viewItem == 'garden'">
       <div id="cont-title">
         <h1 v-if="languagePref == 'en'" class="lg-en">AMAZING GARDEN</h1>
         <h1 v-if="languagePref == 'bm'" class="lg-bm">KEBUN LUAR BIASA</h1>
-        <h1 v-if="languagePref == 'cn'" class="lg-cn">Dan</h1>
+        <h1 v-if="languagePref == 'cn'" class="lg-cn">神奇花园</h1>
       </div>
-
+      <div class="thick-line"></div>
       <div id="wrapper-bonsai" class="sub-wrapper">
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Bonsai</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Bonsai</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Bonsai</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">盆栽</h2>
         </div>
         <div class="content-box" v-for="a in garden.bonsai">
           <img class="center" v-bind:src="a.images" alt="...">
@@ -166,21 +173,21 @@
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Soil</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Tanah</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Tu</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">泥土</h2>
         </div>
         <div class="content-box" v-for="a in garden.soil">
           <img class="center" v-bind:src="a.images" alt="...">
-      
+
           <div class="info" v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.nameEN }}</p>
             <p class="lg-en">RM {{ a.price }}</p>
           </div>
-      
+
           <div class="info" v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.nameBM }}</p>
             <p class="lg-bm">RM {{ a.price }}</p>
           </div>
-      
+
           <div class="info" v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.nameCN }}</p>
             <p class="lg-cn">RM {{ a.price }}</p>
@@ -192,21 +199,21 @@
         <div class="cont-sub-title">
           <h2 v-if="languagePref == 'en'" class="lg-en">Fertiliser</h2>
           <h2 v-if="languagePref == 'bm'" class="lg-bm">Baja</h2>
-          <h2 v-if="languagePref == 'cn'" class="lg-cn">Fei Liao</h2>
+          <h2 v-if="languagePref == 'cn'" class="lg-cn">肥料</h2>
         </div>
         <div class="content-box" v-for="a in garden.fertiliser">
           <img class="center" v-bind:src="a.images" alt="...">
-      
+
           <div class="info" v-if="languagePref == 'en'">
             <p class="lg-en">{{ a.nameEN }}</p>
             <p class="lg-en">RM {{ a.price }}</p>
           </div>
-      
+
           <div class="info" v-if="languagePref == 'bm'">
             <p class="lg-bm">{{ a.nameBM }}</p>
             <p class="lg-bm">RM {{ a.price }}</p>
           </div>
-      
+
           <div class="info" v-if="languagePref == 'cn'">
             <p class="lg-cn">{{ a.nameCN }}</p>
             <p class="lg-cn">RM {{ a.price }}</p>
@@ -215,17 +222,20 @@
       </div>
 
     </div>
+
+    <div id="wrapper-contact" class="footer-contact">
+      <div v-if="languagePref == 'en'" class="lg-en">Please Whatsapp/Call Daniel at 011-16962828</div>
+      <div v-if="languagePref == 'bm'" class="lg-bm">Sila Whatsapp/Call Daniel di 011-16962828</div>
+      <div v-if="languagePref == 'cn'" class="lg-cn">请 Whatsapp/呼叫 Daniel 在 011-16962828</div>
+    </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="script.js"></script>
 </body>
