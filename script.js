@@ -87,22 +87,22 @@ const vm = Vue.createApp({
         bonsai: [
           {
             nameEN: "Bonsai 1",
-            nameBN: "Tanah",
-            nameCN: "",
+            nameBM: "Bonsai 1",
+            nameCN: "盆栽 1",
             price: "2500.00",
             images: "./images/bonsai.PNG"
           },
           {
             nameEN: "Bonsai 2",
-            nameBN: "Tanah",
-            nameCN: "",
+            nameBM: "Bonsai 2",
+            nameCN: "盆栽 2",
             price: "4500.00",
             images: "./images/bonsai.PNG"
           },
           {
             nameEN: "Bonsai 3",
-            nameBN: "Tanah",
-            nameCN: "",
+            nameBM: "Bonsai 3",
+            nameCN: "盆栽 3",
             price: "6500.00",
             images: "./images/bonsai.PNG"
           }
@@ -110,8 +110,8 @@ const vm = Vue.createApp({
         soil: [
           {
             nameEN: "Compose Soil",
-            nameBN: "Tanah",
-            nameCN: "",
+            nameBM: "Tanah",
+            nameCN: "泥土",
             price: "25.00",
             images: "./images/bonsai.PNG"
           }
@@ -119,8 +119,8 @@ const vm = Vue.createApp({
         fertiliser: [
           {
             nameEN: "Fertiliser",
-            nameBN: "Tanah",
-            nameCN: "",
+            nameBM: "Baja",
+            nameCN: "肥料",
             price: "25.00",
             images: "./images/bonsai.PNG"
           }
